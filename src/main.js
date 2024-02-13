@@ -29,12 +29,12 @@ form.addEventListener('submit', e => {
 
 function getImages(searchRequestValue) {
   if (searchRequestValue.trim() === '') {
-    return Promise.reject(new Error('Поле не може бути порожнім.')).catch(
+    return Promise.reject(new Error('Field cannot be empty.')).catch(
       err => {
         loaderOff();
         iziToast.error({
-          title: 'Помилка',
-          message: 'Поле не може бути порожнім.',
+          title: 'Error',
+          message: 'Field cannot be empty.',
           position: 'topRight',
         });
       }
@@ -42,7 +42,7 @@ function getImages(searchRequestValue) {
   }
 
   const params = {
-    key: '42321641-23e42709c41860fd235775557',
+    key: '42358755-2f91a8a1ff3edf8f2432f22e1',
     q: `${searchRequestValue.trim()}`
       .split(' ')
       .map(word => {
@@ -66,8 +66,8 @@ function getImages(searchRequestValue) {
     })
     .catch(() => {
       iziToast.error({
-        title: 'Помилка',
-        message: 'Відсутні результати пошуку. Спробуйте знову!',
+        title: 'Error',
+        message: 'No search results found. Please try again!',
         position: 'topRight',
       });
     });
